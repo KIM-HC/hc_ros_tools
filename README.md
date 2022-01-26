@@ -19,3 +19,7 @@ pub_img.py
 reads image file and publishes it
 
 c++
+
+
+sudo apt install ros-melodic-vision-msgs
+
