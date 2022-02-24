@@ -48,13 +48,13 @@ class MakeCluster():
 
     def file_name(self, num):
         if (num < 10):
-            return '000' + str(num)
+            return '000{0}'.format(num)
         elif (num < 100):
-            return '00' + str(num)
+            return '00{0}'.format(num)
         elif (num < 1000):
-            return '0' + str(num)
+            return '0{0}'.format(num)
         elif (num < 10000):
-            return str(num)
+            return '{0}'.format(num)
 
 
 

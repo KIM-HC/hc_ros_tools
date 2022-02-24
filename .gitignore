@@ -135,3 +135,4 @@ dmypy.json
 ## KHC
 data/sh_cluster/table_assembly_static
 data/sh_pickit/point_cloud
+ik_db.yaml
