@@ -25,6 +25,14 @@ class CameraInfoConverter():
               0.0,        922.132568, 366.194701, 0.0,
               0.0,        0.0,        1.0,        0.0]
 
+    ## for realsense KHC#3 1920 X 1080
+    ## distortion
+
+    ## camera matrix
+
+    ## projection matrix
+
+
   def callback(self,data):
     data.D = self.D
     data.K = self.K

@@ -1,4 +1,6 @@
 <launch>
+  <arg name="hc_width"           default="1920"/>
+  <arg name="hc_height"           default="1080"/>
   <arg name="serial_no"           default=""/>
   <arg name="usb_port_id"         default=""/>
   <arg name="device_type"         default=""/>
@@ -23,23 +25,23 @@
   <arg name="enable_confidence"   default="true"/>
   <arg name="confidence_fps"      default="-1"/>
 
-  <arg name="infra_width"         default="848"/>
+  <arg name="infra_width"         default="640"/>
   <arg name="infra_height"        default="480"/>
   <arg name="enable_infra"        default="false"/>
   <arg name="enable_infra1"       default="false"/>
   <arg name="enable_infra2"       default="false"/>
   <arg name="infra_rgb"           default="false"/>
 
-  <arg name="color_width"         default="-1"/>
-  <arg name="color_height"        default="-1"/>
+  <arg name="color_width"         default="$(arg hc_width)"/>
+  <arg name="color_height"        default="$(arg hc_height)"/>
   <arg name="enable_color"        default="true"/>
 
-  <arg name="fisheye_fps"         default="-1"/>
-  <arg name="depth_fps"           default="-1"/>
+  <arg name="fisheye_fps"         default="30"/>
+  <arg name="depth_fps"           default="30"/>
   <arg name="infra_fps"           default="30"/>
-  <arg name="color_fps"           default="-1"/>
-  <arg name="gyro_fps"            default="-1"/>
-  <arg name="accel_fps"           default="-1"/>
+  <arg name="color_fps"           default="30"/>
+  <arg name="gyro_fps"            default="400"/>
+  <arg name="accel_fps"           default="250"/>
   <arg name="enable_gyro"         default="false"/>
   <arg name="enable_accel"        default="false"/>
 
@@ -147,5 +149,9 @@
       
     </include>
   </group>
+
   <node name="camera_info_converter" pkg="hc_ros_tools" type="change_camera_info_topic.py" respawn="true"/>
+
+  <node name="aruco_saver" pkg="hc_ros_tools" type="save_aruco_topic.py" respawn="true"/>
+
 </launch>
